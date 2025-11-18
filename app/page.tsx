@@ -1,3 +1,4 @@
+import AnimatedSectionWrapper from "./components/AnimatedSectionWrapper";
 import Hero from "./sections/Hero";
 // import About from "./sections/About";
 // import Projects from "./sections/Projects";
@@ -6,22 +7,22 @@ import Skills from "./sections/Skills";
 
 export default function Home() {
   return (
-    <>
-      <section id="hero">
+    <main className="snap-y snap-mandatory overflow-scroll h-screen pt-16">
+      <AnimatedSectionWrapper id="hero">
         <Hero />
-      </section>
+      </AnimatedSectionWrapper>
       {/* <section id="about">
         <About />
       </section>
       <section id="projects">
         <Projects />
       </section> */}
-      <section id="skills">
+      <AnimatedSectionWrapper id="skills" className="py-16">
         <Skills />
-      </section>
+      </AnimatedSectionWrapper>
       {/* <section id="contact">
         <Contact />
       </section> */}
-    </>
+    </main>
   );
 }

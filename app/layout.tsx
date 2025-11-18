@@ -1,3 +1,5 @@
+// src/app/layout.tsx (Versión Corregida)
+
 import "./globals.css";
 import { LanguageProvider } from "./context/LenguageContext";
 import Navbar from "./components/NavBar";
@@ -15,11 +17,10 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="bg-gray-950 text-white">
+      <body className="bg-gray-950 text-white min-h-screen">
         <LanguageProvider>
           <Navbar />
-          <main className="px-6 py-10 max-w-4xl mx-auto">{children}</main>
-          {/* <Footer /> */}
+          {children}
         </LanguageProvider>
       </body>
     </html>
