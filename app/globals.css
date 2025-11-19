@@ -34,3 +34,20 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.snap-scroll-container::-webkit-scrollbar {
+  width: 8px;
+}
+
+.snap-scroll-container::-webkit-scrollbar-track {
+  background: #000000;
+}
+
+.snap-scroll-container::-webkit-scrollbar-thumb {
+  background-color: #333333;
+  border-radius: 20px;
+}
+
+.snap-scroll-container::-webkit-scrollbar-thumb:hover {
+  background-color: #555555;
+}

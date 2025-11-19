@@ -17,13 +17,13 @@ export default function AnimatedSectionWrapper({
   return (
     <motion.section
       id={id}
-      className={`snap-start px-6 max-w-4xl mx-auto ${className}`}
+      className={`relative w-full ${className}`}
       initial={{ opacity: 0, y: 50 }}
       whileInView={{ opacity: 1, y: 0 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.4 }}
     >
-      {children}
+      <div className="h-full px-6 max-w-4xl mx-auto">{children}</div>
     </motion.section>
   );
 }

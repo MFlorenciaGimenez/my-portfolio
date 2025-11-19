@@ -6,13 +6,13 @@ export default function Navbar() {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <nav className="w-full py-4 px-6 flex justify-between items-center bg-gray-900 border-b border-gray-700">
+    <nav className="fixed top-0 w-full z-50 py-4 px-6 flex justify-between items-center bg-gray-900/90 backdrop-blur-sm border-b border-gray-700">
       <h1 className="text-xl font-bold text-blue-400 cursor-pointer">
         Florencia.dev
       </h1>
 
       <div className="flex items-center gap-6 text-gray-300">
-        <a href="#about" className="hover:text-white transition">
+        <a href="#hero" className="hover:text-white transition">
           {language === "en" ? "About" : "Sobre mí"}
         </a>
         <a href="#projects" className="hover:text-white transition">

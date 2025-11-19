@@ -1,7 +1,6 @@
 "use client";
 
 import { useLanguage } from "../context/LenguageContext";
-// 1. Importamos el tipo para TypeScript y los iconos específicos
 import { IconType } from "react-icons";
 import {
   SiReact,
