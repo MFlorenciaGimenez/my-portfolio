@@ -1,6 +1,5 @@
 "use client";
 
-import { div } from "framer-motion/client";
 import { useLanguage } from "../context/LenguageContext";
 import { IconType } from "react-icons";
 import {
@@ -21,6 +20,7 @@ import {
   SiVercel,
   SiMongodb,
   SiNextdotjs,
+  SiCloudinary,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
 
@@ -60,6 +60,7 @@ const skills: SkillGroups = {
     { name: "VS Code", icon: VscCode, color: "text-[#007ACC]" },
     { name: "Railway", icon: SiRailway, color: "text-white" },
     { name: "Vercel", icon: SiVercel, color: "text-white" },
+    { name: "Cloudinary", icon: SiCloudinary, color: "text-[#3448C5]" },
   ],
 };
 

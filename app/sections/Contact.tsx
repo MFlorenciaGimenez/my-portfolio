@@ -39,8 +39,9 @@ export default function Contact() {
     }
   };
 
-  const handleChange = (e) => {
-    // Usamos 'name' del input para actualizar la clave correspondiente en formData
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
 
@@ -61,7 +62,6 @@ export default function Contact() {
         </p>
 
         <form onSubmit={handleSubmit} className="space-y-6">
-          {/* CAMPO: Tu Nombre (Ya corregido) */}
           <div>
             <label htmlFor="name" className="block text-gray-300 mb-1">
               {language === "en" ? "Your Name" : "Tu Nombre"}
@@ -80,7 +80,6 @@ export default function Contact() {
             />
           </div>
 
-          {/* CAMPO: Tu Email (CORREGIDO: Añadido name, value, onChange) */}
           <div>
             <label htmlFor="email" className="block text-gray-300 mb-1">
               {language === "en" ? "Your Email" : "Tu Email"}
@@ -97,7 +96,6 @@ export default function Contact() {
             />
           </div>
 
-          {/* CAMPO: Tu Mensaje (CORREGIDO: Añadido name, value, onChange) */}
           <div>
             <label htmlFor="message" className="block text-gray-300 mb-1">
               {language === "en" ? "Your Message" : "Tu Mensaje"}
@@ -153,7 +151,7 @@ export default function Contact() {
         )}
         <div className="text-center mt-10">
           <p className="text-gray-400 mb-4">
-            {language === "en" ? "Or find me on" : "O encuéntrame en"}
+            {language === "en" ? "Or find me on" : "O encontrame en"}
           </p>
           <div className="flex justify-center space-x-6 text-gray-400">
             <a

@@ -7,7 +7,7 @@ interface ProjectCardProps {
   description: string;
   image: string;
   tech: string[];
-  liveUrl: string;
+  liveUrl?: string;
   codeUrl: string;
 }
 
@@ -24,14 +24,21 @@ export default function ProjectCard({
       className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-900/30 
     transition-shadow duration-300 h-full"
     >
-      <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-        <Image
-          src={image}
-          alt={title}
-          width={500}
-          height={300}
-          className="w-full h-48 object-cover hover:opacity-90 transition"
-        />
+      <a
+        href={liveUrl}
+        target="_blank"
+        rel="noopener noreferrer"
+        className="shrink-0"
+      >
+        <div className="relative w-full h-48 bg-gray-950 flex items-center justify-center">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            sizes="(max-width: 768px) 100vw, 30vw"
+            className="object-contain hover:opacity-90 transition p-2"
+          />
+        </div>
       </a>
 
       <div className="p-5 h-full flex flex-col justify-between">

@@ -11,7 +11,7 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col justify-center items-center h-screen py-16 sm:py-24 px-4 h-full"
+      className="flex flex-col justify-center items-center h-screen py-16 sm:py-24 px-4 "
     >
       <div className="w-full">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-blue-400 text-center mb-10 max-w-4xl mx-auto">
