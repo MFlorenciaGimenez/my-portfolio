@@ -14,7 +14,7 @@ export default function Contact() {
   const [loading, setLoading] = useState(false);
   const [status, setStatus] = useState("");
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setLoading(true);
     setStatus("");
