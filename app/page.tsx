@@ -1,9 +1,14 @@
+"use client";
+
+import dynamic from "next/dynamic";
 import AnimatedSectionWrapper from "./components/AnimatedSectionWrapper";
 import Hero from "./sections/Hero";
-// import About from "./sections/About";
-// import Projects from "./sections/Projects";
-import Skills from "./sections/Skills";
 import Contact from "./sections/Contact";
+
+const Skills = dynamic(() => import("./sections/Skills"), { ssr: false });
+const Projects = dynamic(() => import("./sections/Projects"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -11,13 +16,14 @@ export default function Home() {
       <AnimatedSectionWrapper id="hero" className="h-screen snap-start">
         <Hero />
       </AnimatedSectionWrapper>
-      {/* <section id="about">
-        <About />
-      </section>
-      <section id="projects">
+      <AnimatedSectionWrapper
+        id="projects"
+        className="h-screen snap-start"
+        contentClassName="max-w-7xl"
+      >
         <Projects />
-      </section> */}
-      <AnimatedSectionWrapper id="skills" className="h-screen snap-start">
+      </AnimatedSectionWrapper>
+      <AnimatedSectionWrapper id="skills" className="snap-start">
         <Skills />
       </AnimatedSectionWrapper>
       <section id="contact" className="h-screen snap-start">

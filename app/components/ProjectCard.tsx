@@ -1,5 +1,7 @@
 "use client";
 
+import Image from "next/image";
+
 interface ProjectCardProps {
   title: string;
   description: string;
@@ -18,24 +20,23 @@ export default function ProjectCard({
   codeUrl,
 }: ProjectCardProps) {
   return (
-    <div className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-900/30 transition-shadow duration-300">
-      {/* Imagen clickeable */}
+    <div
+      className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-900/30 
+    transition-shadow duration-300 h-full"
+    >
       <a href={liveUrl} target="_blank" rel="noopener noreferrer">
-        <img
+        <Image
           src={image}
           alt={title}
+          width={500}
+          height={300}
           className="w-full h-48 object-cover hover:opacity-90 transition"
         />
       </a>
 
-      <div className="p-5">
-        {/* Título */}
+      <div className="p-5 h-full flex flex-col justify-between">
         <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
-
-        {/* Descripción */}
-        <p className="text-gray-400 text-sm mb-4">{description}</p>
-
-        {/* Chips de tecnologías */}
+        <p className="text-gray-400 text-sm mb-4 line-clamp-3">{description}</p>
         <div className="flex flex-wrap gap-2 mb-4">
           {tech.map((t) => (
             <span
@@ -46,9 +47,7 @@ export default function ProjectCard({
             </span>
           ))}
         </div>
-
-        {/* Botones */}
-        <div className="flex gap-3">
+        <div className="flex gap-3 mt-auto">
           <a
             href={liveUrl}
             target="_blank"

@@ -7,12 +7,14 @@ interface AnimatedSectionWrapperProps {
   children: React.ReactNode;
   id: string;
   className?: string;
+  contentClassName?: string;
 }
 
 export default function AnimatedSectionWrapper({
   children,
   id,
   className = "",
+  contentClassName = "max-w-4xl",
 }: AnimatedSectionWrapperProps) {
   return (
     <motion.section
@@ -23,7 +25,9 @@ export default function AnimatedSectionWrapper({
       transition={{ duration: 0.8, ease: "easeOut" }}
       viewport={{ once: true, amount: 0.4 }}
     >
-      <div className="h-full px-6 max-w-4xl mx-auto">{children}</div>
+      <div className={`h-full px-6 ${contentClassName} mx-auto`}>
+        {children}
+      </div>
     </motion.section>
   );
 }

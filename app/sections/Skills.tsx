@@ -77,7 +77,7 @@ export default function Skills() {
     } else if (titleKey === "Backend") {
       title = language === "en" ? "Backend" : "Backend";
     } else {
-      title = language === "en" ? "Tools & Others" : "Herramientas y Otros";
+      title = language === "en" ? "Tools & Others" : "Herramientas";
     }
 
     return (

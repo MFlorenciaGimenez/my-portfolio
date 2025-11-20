@@ -1,9 +1,6 @@
-// src/app/layout.tsx (Versión Corregida)
-
 import "./globals.css";
 import { LanguageProvider } from "./context/LenguageContext";
 import Navbar from "./components/NavBar";
-// import Footer from "./components/Footer";
 
 export const metadata = {
   title: "Florencia Gimenez — Portfolio",

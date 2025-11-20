@@ -51,3 +51,26 @@ body {
 .snap-scroll-container::-webkit-scrollbar-thumb:hover {
   background-color: #555555;
 }
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/*scroll on 'X'*/
+.custom-scrollbar::-webkit-scrollbar {
+  height: 8px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: #1f2937;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 4px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #2563eb;
+}
