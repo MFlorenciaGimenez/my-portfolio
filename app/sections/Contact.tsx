@@ -85,7 +85,7 @@ export default function Contact() {
           </p>
           <div className="flex justify-center space-x-6 text-gray-400">
             <a
-              href="TU_LINK_GITHUB"
+              href="https://github.com/MFlorenciaGimenez"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition"
@@ -93,7 +93,7 @@ export default function Contact() {
               <FaGithub className="w-8 h-8" />
             </a>
             <a
-              href="TU_LINK_LINKEDIN"
+              href="https://linkedin.com/in/florencia-gimenez-745737299"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-white transition"

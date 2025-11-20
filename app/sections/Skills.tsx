@@ -1,5 +1,6 @@
 "use client";
 
+import { div } from "framer-motion/client";
 import { useLanguage } from "../context/LenguageContext";
 import { IconType } from "react-icons";
 import {
@@ -80,20 +81,22 @@ export default function Skills() {
     }
 
     return (
-      <div className="flex flex-col justify-center items-center snap-start p-8">
-        <h3 className="text-2xl font-bold text-white mb-6">{title}</h3>
-
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
+      <div className="flex flex-col items-center p-4 sm:p-6 bg-gray-900 rounded-lg shadow-xl border border-gray-800 h-full">
+        <h3 className="text-xl sm:text-2xl font-bold text-white mb-6">
+          {title}
+        </h3>
+        <div className="grid grid-cols-2 gap-4 mx-auto w-full">
           {group.map((skill) => (
             <div
               key={skill.name}
-              className="group bg-gray-900 border border-gray-800 rounded-xl flex flex-col items-center justify-start p-4 shadow-lg hover:shadow-blue-900/40 hover:border-blue-500/30 transition-all duration-300 h-full w-32"
+              className="group bg-gray-800 border border-gray-800 rounded-xl flex flex-col items-center justify-center p-4 
+              shadow-lg hover:shadow-blue-900/40 hover:border-blue-500/30 transition-all duration-300 h-28 w-full "
             >
               <skill.icon
-                className={`w-12 h-12 mb-3 transition-colors duration-300 ${skill.color} filter grayscale group-hover:grayscale-0`}
+                className={`w-8 h-8 sm:w-10 sm:h-10 mb-2 transition-colors duration-300 ${skill.color} filter grayscale 
+                group-hover:grayscale-0`}
               />
-
-              <p className="text-gray-300 font-medium text-center w-full text-sm">
+              <p className="text-gray-300 font-medium text-center w-full text-xs sm:text-sm leading-snug wrap-break-word">
                 {skill.name}
               </p>
             </div>
@@ -104,13 +107,13 @@ export default function Skills() {
   };
 
   return (
-    <section className="flex flex-col justify-center items-center min-h-screen snap-start p-8 py-20">
+    <section className="flex flex-col justify-center items-center h-full py-10 sm:py-20 px-4">
       <div className="w-full max-w-7xl">
-        <h2 className="text-4xl font-extrabold text-blue-400 text-center mb-10">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-blue-400 text-center mb-12">
           {language === "en" ? "Tech Skills" : "Tecnologías"}
         </h2>
 
-        <div className="space-y-14">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 lg:gap-12 mt-8">
           {renderSkillsGroup(skills.frontend, "Frontend")}
           {renderSkillsGroup(skills.backend, "Backend")}
           {renderSkillsGroup(skills.tools, "Tools & Others")}
