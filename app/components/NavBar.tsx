@@ -16,7 +16,7 @@ export default function Navbar() {
           Florencia.dev
         </h1>
 
-        <div className="hidden md:flex items-center gap-6 text-gray-300">
+        <div className="hidden md:flex items-center gap-6 text-gray-200/90">
           <a href="#hero" className="hover:text-white transition">
             {language === "en" ? "About" : "Sobre mí"}
           </a>
@@ -31,7 +31,9 @@ export default function Navbar() {
           </a>
 
           <a
-            href={language === "en" ? "/resume-en.pdf" : "/resume-es.pdf"}
+            href={
+              language === "en" ? "/resumeEnglish.pdf" : "/resumeEspanol.pdf"
+            }
             download
             className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white transition"
           >
