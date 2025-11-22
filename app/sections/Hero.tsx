@@ -6,8 +6,8 @@ export default function Hero() {
   const { language } = useLanguage();
 
   return (
-    <section className="h-full flex flex-col justify-center items-center px-4 text-white">
-      <h1 className="text-4xl sm:text-5xl lg:text-6xl text-blue-400 font-bold mb-4">
+    <section className="min-h-screen flex flex-col items-center justify-start pt-20 md:pt-40 lg:pt-48 px-4 text-white">
+      <h1 className="text-4xl sm:text-5xl lg:text-6xl text-blue-400 font-bold mb-4 text-center">
         Florencia Gimenez
       </h1>
 
