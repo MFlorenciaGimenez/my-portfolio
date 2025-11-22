@@ -4,7 +4,7 @@ export const projects = [
     title: "FixPoint",
     description:
       "A platform connecting users with home-service professionals. Includes authentication, chat system, payments, reviews and admin panel.",
-    image: "/fixpoint.jpg",
+    image: "/fixPoint.jpg",
     tech: [
       "NestJS",
       "Next.js",
