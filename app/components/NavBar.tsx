@@ -72,7 +72,7 @@ export default function Navbar() {
           </a>
 
           <a
-            href={language === "en" ? "/resume-en.pdf" : "/resume-es.pdf"}
+            href={language === "en" ? "/RESUME.pdf" : "/CV.pdf"}
             download
             className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white text-center"
           >
