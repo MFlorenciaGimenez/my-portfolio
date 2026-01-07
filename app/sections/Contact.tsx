@@ -1,18 +1,22 @@
 "use client";
 
 import { useState } from "react";
-import { useLanguage } from "../context/LenguageContext";
+import { useLanguage } from "../context/LanguageContext";
 import { FaGithub, FaLinkedin } from "react-icons/fa";
 
 export default function Contact() {
   const { language } = useLanguage();
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    name: string;
+    email: string;
+    message: string;
+  }>({
     name: "",
     email: "",
     message: "",
   });
-  const [loading, setLoading] = useState(false);
-  const [status, setStatus] = useState("");
+  const [loading, setLoading] = useState<boolean>(false);
+  const [status, setStatus] = useState<"success" | "error" | "">("");
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -48,10 +52,10 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="flex flex-col justify-center items-center h-screen py-16 px-4"
+      className="flex flex-col justify-center items-center h-full py-10 sm:py-20 px-4"
     >
       <div className="w-full max-w-lg text-center">
-        <h2 className="text-4xl sm:text-5xl font-extrabold text-blue-400 text-center mb-4">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-blue-400 text-center mb-12">
           {language === "en" ? "Let's Talk" : "Hablemos"}
         </h2>
 
@@ -124,6 +128,8 @@ export default function Contact() {
                 ? "bg-blue-800 cursor-not-allowed"
                 : "bg-blue-600 hover:bg-blue-700 text-white"
             }`}
+            aria-label={language === "en" ? "Send message" : "Enviar mensaje"}
+            aria-disabled={loading}
           >
             {loading
               ? language === "en"

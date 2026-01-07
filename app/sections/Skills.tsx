@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../context/LenguageContext";
+import { useLanguage } from "../context/LanguageContext";
 import { IconType } from "react-icons";
 import {
   SiReact,
@@ -21,8 +21,11 @@ import {
   SiMongodb,
   SiNextdotjs,
   SiCloudinary,
+  SiPython,
+  SiTensorflow,
 } from "react-icons/si";
 import { VscCode } from "react-icons/vsc";
+import { FaBrain } from "react-icons/fa";
 
 interface Skill {
   name: string;
@@ -47,11 +50,15 @@ const skills: SkillGroups = {
   ],
   backend: [
     { name: "NestJS", icon: SiNestjs, color: "text-[#E0234E]" },
+    { name: "TypeScript", icon: SiTypescript, color: "text-[#3178C6]" },
     { name: "Node.js", icon: SiNodedotjs, color: "text-[#339933]" },
     { name: "Express", icon: SiExpress, color: "text-white" },
     { name: "TypeORM", icon: SiTypeorm, color: "text-[#FE0C05]" },
     { name: "PostgreSQL", icon: SiPostgresql, color: "text-[#4169E1]" },
     { name: "MongoDB", icon: SiMongodb, color: "text-[#47A248]" },
+    { name: "Python", icon: SiPython, color: "text-[#3776AB]" },
+    { name: "ML", icon: SiTensorflow, color: "text-[#FF6F00]" },
+    { name: "RAG", icon: FaBrain, color: "text-[#9333EA]" },
   ],
   tools: [
     { name: "Git", icon: SiGit, color: "text-[#F05032]" },

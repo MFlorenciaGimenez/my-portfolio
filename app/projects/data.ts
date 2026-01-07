@@ -1,4 +1,6 @@
-export const projects = [
+import type { Project } from "./types";
+
+export const projects: readonly Project[] = [
   {
     id: 1,
     title: "FixPoint",
@@ -23,7 +25,7 @@ export const projects = [
     description:
       "A personal travel manager that allows users to create cities, trips and itineraries. Features authentication, database relationships and full CRUD.",
     image: "/sitioConstruccion.png",
-    tech: ["NestJS", "React", "PostgreSQL", "TypeORM", "JWT"],
+    tech: ["NestJS", "React", "PostgreSQL", "TypeORM", "JWT", "Python", "RAG", "ML"],
     codeUrl: "https://github.com/FlorGimenez/travel-log",
   },
   {

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../context/LenguageContext";
+import { useLanguage } from "../context/LanguageContext";
 import ProjectCard from "../components/ProjectCard";
 import { FaGithub } from "react-icons/fa";
 import { projects } from "../projects/data";
@@ -11,10 +11,10 @@ export default function Projects() {
   return (
     <section
       id="projects"
-      className="flex flex-col justify-center items-center h-screen py-16 sm:py-24 px-4 "
+      className="flex flex-col justify-center items-center h-full py-10 sm:py-20 px-4 "
     >
-      <div className="w-full">
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-blue-400 text-center mb-10 max-w-4xl mx-auto">
+      <div className="w-full max-w-7xl">
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-blue-400 text-center mb-12">
           {language === "en" ? "My Projects" : "Mis Proyectos"}
         </h2>
 

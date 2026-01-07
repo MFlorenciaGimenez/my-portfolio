@@ -9,6 +9,9 @@ const Skills = dynamic(() => import("./sections/Skills"), { ssr: false });
 const Projects = dynamic(() => import("./sections/Projects"), {
   ssr: false,
 });
+const Certificates = dynamic(() => import("./sections/Certificates"), {
+  ssr: false,
+});
 
 export default function Home() {
   return (
@@ -18,7 +21,7 @@ export default function Home() {
       </AnimatedSectionWrapper>
       <AnimatedSectionWrapper
         id="projects"
-        className="h-screen snap-start"
+        className="snap-start"
         contentClassName="max-w-7xl"
       >
         <Projects />
@@ -26,7 +29,10 @@ export default function Home() {
       <AnimatedSectionWrapper id="skills" className="snap-start">
         <Skills />
       </AnimatedSectionWrapper>
-      <section id="contact" className="h-screen snap-start">
+      <AnimatedSectionWrapper id="certificates" className="snap-start">
+        <Certificates />
+      </AnimatedSectionWrapper>
+      <section id="contact" className="snap-start">
         <Contact />
       </section>
     </main>

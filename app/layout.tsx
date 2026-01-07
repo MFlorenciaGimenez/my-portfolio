@@ -1,5 +1,5 @@
 import "./globals.css";
-import { LanguageProvider } from "./context/LenguageContext";
+import { LanguageProvider } from "./context/LanguageContext";
 import Navbar from "./components/NavBar";
 
 export const metadata = {
@@ -13,7 +13,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
       <body className="bg-gray-950 text-white min-h-screen">
         <LanguageProvider>
           <Navbar />

@@ -1,15 +1,9 @@
 "use client";
 
 import Image from "next/image";
+import type { Project } from "../projects/types";
 
-interface ProjectCardProps {
-  title: string;
-  description: string;
-  image: string;
-  tech: string[];
-  liveUrl?: string;
-  codeUrl: string;
-}
+interface ProjectCardProps extends Project {}
 
 export default function ProjectCard({
   title,
@@ -24,22 +18,34 @@ export default function ProjectCard({
       className="bg-gray-900 border border-gray-800 rounded-xl overflow-hidden shadow-lg hover:shadow-blue-900/30 
     transition-shadow duration-300 h-full"
     >
-      <a
-        href={liveUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="shrink-0"
-      >
+      {liveUrl ? (
+        <a
+          href={liveUrl}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="shrink-0"
+        >
+          <div className="relative w-full h-48 bg-gray-950 flex items-center justify-center">
+            <Image
+              src={image}
+              alt={`${title} project preview`}
+              fill
+              sizes="(max-width: 768px) 100vw, 30vw"
+              className="object-contain hover:opacity-90 transition p-2"
+            />
+          </div>
+        </a>
+      ) : (
         <div className="relative w-full h-48 bg-gray-950 flex items-center justify-center">
           <Image
             src={image}
-            alt={title}
+            alt={`${title} project preview`}
             fill
             sizes="(max-width: 768px) 100vw, 30vw"
-            className="object-contain hover:opacity-90 transition p-2"
+            className="object-contain p-2"
           />
         </div>
-      </a>
+      )}
 
       <div className="p-5 h-full flex flex-col justify-between">
         <h3 className="text-xl font-bold text-white mb-2">{title}</h3>
@@ -54,21 +60,27 @@ export default function ProjectCard({
             </span>
           ))}
         </div>
-        <div className="flex gap-3 mt-auto">
-          <a
-            href={liveUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm text-center"
-          >
-            Live Demo
-          </a>
+        <div className={`flex gap-3 mt-auto ${liveUrl ? "" : "justify-center"}`}>
+          {liveUrl && (
+            <a
+              href={liveUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="flex-1 px-4 py-2 bg-blue-600 hover:bg-blue-700 text-white rounded-md text-sm text-center"
+              aria-label={`View live demo of ${title}`}
+            >
+              Live Demo
+            </a>
+          )}
 
           <a
             href={codeUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 px-4 py-2 bg-gray-800 border border-gray-700 hover:bg-gray-700 text-white rounded-md text-sm text-center"
+            className={`px-4 py-2 bg-gray-800 border border-gray-700 hover:bg-gray-700 text-white rounded-md text-sm text-center ${
+              liveUrl ? "flex-1" : "w-full"
+            }`}
+            aria-label={`View source code of ${title}`}
           >
             View Code
           </a>

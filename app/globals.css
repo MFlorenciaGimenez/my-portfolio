@@ -56,7 +56,6 @@ body {
   display: none;
 }
 
-/*scroll on 'X'*/
 .custom-scrollbar::-webkit-scrollbar {
   height: 8px;
 }

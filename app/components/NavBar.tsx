@@ -1,7 +1,7 @@
 "use client";
 
 import { HiMenu, HiX } from "react-icons/hi";
-import { useLanguage } from "../context/LenguageContext";
+import { useLanguage } from "../context/LanguageContext";
 import { useState } from "react";
 
 export default function Navbar() {
@@ -26,13 +26,16 @@ export default function Navbar() {
           <a href="#skills" className="hover:text-white transition">
             {language === "en" ? "Tech Skills" : "Tecnologías"}
           </a>
+          <a href="#certificates" className="hover:text-white transition">
+            {language === "en" ? "Certifications" : "Certificaciones"}
+          </a>
           <a href="#contact" className="hover:text-white transition">
             {language === "en" ? "Contact" : "Contacto"}
           </a>
 
           <a
             href={
-              language === "en" ? "/resumeEnglish.pdf" : "/resumeEspanol.pdf"
+              language === "en" ? "/RESUME.pdf" : "/CV.pdf"
             }
             download
             className="px-3 py-2 bg-blue-600 hover:bg-blue-700 rounded-md text-white transition"
@@ -43,6 +46,7 @@ export default function Navbar() {
           <button
             onClick={() => setLanguage(language === "en" ? "es" : "en")}
             className="ml-2 px-2 py-1 border border-gray-500 rounded text-gray-300 hover:text-white hover:border-white transition"
+            aria-label={language === "en" ? "Switch to Spanish" : "Cambiar a Inglés"}
           >
             {language === "en" ? "ES" : "EN"}
           </button>
@@ -51,6 +55,8 @@ export default function Navbar() {
         <button
           className="md:hidden text-white text-3xl"
           onClick={() => setIsOpen(!isOpen)}
+          aria-label={isOpen ? "Close menu" : "Open menu"}
+          aria-expanded={isOpen}
         >
           {isOpen ? <HiX /> : <HiMenu />}
         </button>
@@ -67,6 +73,9 @@ export default function Navbar() {
           <a href="#skills" onClick={() => setIsOpen(false)}>
             {language === "en" ? "Tech Skills" : "Tecnologías"}
           </a>
+          <a href="#certificates" onClick={() => setIsOpen(false)}>
+            {language === "en" ? "Certifications" : "Certificaciones"}
+          </a>
           <a href="#contact" onClick={() => setIsOpen(false)}>
             {language === "en" ? "Contact" : "Contacto"}
           </a>
@@ -82,6 +91,7 @@ export default function Navbar() {
           <button
             onClick={() => setLanguage(language === "en" ? "es" : "en")}
             className="px-2 py-1 border border-gray-500 rounded text-gray-300 hover:text-white hover:border-white transition w-fit"
+            aria-label={language === "en" ? "Switch to Spanish" : "Cambiar a Inglés"}
           >
             {language === "en" ? "ES" : "EN"}
           </button>

@@ -1,6 +1,6 @@
 "use client";
 
-import { useLanguage } from "../context/LenguageContext";
+import { useLanguage } from "../context/LanguageContext";
 
 export default function Hero() {
   const { language } = useLanguage();
