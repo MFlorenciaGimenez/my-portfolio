@@ -35,13 +35,6 @@ export const certificates: Certificate[] = [
     organization: "Google",
     date: "January 2026",
     url: "/Coursera pm2.pdf",
-  }
-  {
-    id: 5,
-    title: "Crash Course on Python",
-    organization: "Google",
-    date: "December 2025",
-    url: "/certificate_python.jpeg",
   },
-];
+ 
 
